@@ -1,0 +1,123 @@
+--------------------------------------------------------:SQL NOTES:----------------------------------------------------------------
+
+#SQL Operators:--
+
+1. AND Operator
+•	Returns records only when all specified conditions are TRUE.
+•	Used to combine multiple conditions in a query.
+Example:
+SELECT * FROM Employee
+WHERE Department = 'IT' AND Salary > 50000;
+
+2. OR Operator
+•	Returns records when at least one of the specified conditions is TRUE.
+•	Used when multiple possible conditions can satisfy the query.
+Example:
+SELECT * FROM Employee
+WHERE Department = 'IT' OR Department = 'HR';
+
+3. NOT Operator
+•	Excludes records that match a specified condition.
+•	Used to retrieve all records except those that satisfy the condition.
+Example:
+SELECT * FROM Employee
+WHERE NOT Department = 'HR';
+
+#UNION vs UNION ALL:--
+
+UNION
+•	Combines the results of two or more SELECT statements.
+•	Automatically removes duplicate rows.
+•	Returns only unique records.
+•	All SELECT statements must have the same number of columns with compatible data types.
+Example:
+SELECT Name FROM Students
+UNION
+SELECT Name FROM Teachers;
+
+UNION ALL
+•	Combines the results of two or more SELECT statements.
+•	Keeps all duplicate rows.
+•	Faster than UNION because it does not perform duplicate removal.
+Example:
+SELECT Name FROM Students
+UNION ALL
+SELECT Name FROM Teachers;
+
+INTERSECT
+•	Returns only the distinct rows that are common to both queries.
+•	Removes duplicate records automatically.
+Example:
+SELECT Name FROM Students
+INTERSECT
+SELECT Name FROM Employees;
+
+#SQL LIKE Wildcards:--
+
+A%
+•	The value must start with 'A'.
+•	Can have any number of characters after 'A'.
+Examples:
+Amit
+Ankit
+Apple
+
+%A
+•	The value must end with 'A'.
+•	Can have any number of characters before 'A'.
+Examples:
+Rita
+Neha
+Pooja
+A_
+•	Must start with 'A' and contain exactly one character after it.
+Examples:
+Ab
+A1
+Ax
+
+
+
+#WHERE Clause:--
+•	Used to filter records based on a specified condition.
+•	Filters data before grouping takes place.
+•	Can be used with:
+o	SELECT
+o	UPDATE
+o	DELETE
+Example:
+SELECT * FROM Employee
+WHERE Salary > 40000;
+
+HAVING Clause
+•	Used to filter grouped data after the GROUP BY clause.
+•	Works mainly with aggregate functions like:
+o	COUNT()
+o	SUM()
+o	AVG()
+o	MIN()
+o	MAX()
+Example:
+SELECT Department, COUNT(*)
+FROM Employee
+GROUP BY Department
+HAVING COUNT(*) > 5;
+
+
+
+#GROUP BY Clause:--
+
+•	Groups rows having the same values into summary rows.
+•	Commonly used with aggregate functions.
+Example:
+SELECT Department, AVG(Salary)
+FROM Employee
+GROUP BY Department;
+
+Difference Between WHERE and HAVING
+WHERE	HAVING
+Filters individual rows    	Filters grouped data
+Used before GROUP BY	Used after GROUP BY
+Cannot use aggregate functions directly	Mainly used with aggregate functions
+
+

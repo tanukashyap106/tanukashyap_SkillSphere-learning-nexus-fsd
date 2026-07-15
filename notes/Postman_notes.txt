@@ -1,0 +1,101 @@
+-----------------------------------------------POSTMAN NOTES----------------------------------------------------------------------
+
+
+Q1:What is Postman?
+Definition:
+Postman is an API development and testing tool used to send HTTP requests to a server and view the responses. It helps developers test, debug, and verify REST APIs without writing frontend code.
+Uses of Postman
+•	Test REST APIs 
+•	Send HTTP requests 
+•	View JSON responses 
+•	Debug APIs 
+•	Verify API functionality 
+•	Save and organize API collections 
+HTTP Methods in Postman
+1. GET Method
+Definition
+GET is an HTTP method used to retrieve data from the server. It does not modify any data.
+Example Request
+GET /students
+Example Response
+[
+  {
+    "id": 1,
+    "name": "Tanu"
+  }
+]
+Use Cases
+•	Get all students 
+•	Get all books 
+•	Get user details 
+•	View products 
+2. POST Method
+Definition
+POST is an HTTP method used to send new data to the server and create a new resource.
+Example Request
+POST /students
+Request Body
+{
+  "id": 1,
+  "name": "Tanu"
+}
+Example Response
+{
+  "message": "Student Added Successfully"
+}
+Use Cases
+•	Register a new user 
+•	Add a new student 
+•	Create a new product 
+•	Place an order 
+3. PUT Method
+Definition
+PUT is an HTTP method used to completely update an existing resource.
+Example Request
+PUT /students/1
+Request Body
+{
+  "id": 1,
+  "name": "Riya"
+}
+Example Response
+{
+  "message": "Student Updated Successfully"
+}
+Use Cases
+•	Update student details 
+•	Update employee information 
+•	Replace existing data 
+4. PATCH Method
+Definition
+PATCH is an HTTP method used to update only specific fields of an existing resource.
+Example Request
+PATCH /students/1
+Request Body
+{
+  "name": "Riya"
+}
+Example Response
+{
+  "message": "Student Name Updated"
+}
+Use Cases
+•	Update only a user's name 
+•	Change password 
+•	Update email address 
+•	Modify a single field 
+5. DELETE Method
+Definition
+DELETE is an HTTP method used to remove an existing resource from the server.
+Example Request
+DELETE /students/1
+Example Response
+{
+  "message": "Student Deleted Successfully"
+}
+Use Cases
+•	Delete a student 
+Remove a product 
+•	Delete a user account 
+•	Cancel an order 
+

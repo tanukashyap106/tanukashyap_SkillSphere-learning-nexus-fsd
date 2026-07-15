@@ -1,0 +1,65 @@
+-------------------------------------------:Microservices Notes:----------------------------------------------------------------
+
+#Microservices:--
+
+Microservices is a software architecture in which a large application is divided into small, independent services. Each service is responsible for a specific business functionality and can be developed, tested, deployed, and maintained independently.
+Each microservice has:
+•	Its own business logic
+•	Its own database (in many cases)
+•	Independent deployment
+•	Independent scaling
+
+Features of Microservices
+1.	The application is divided into multiple small services.
+2.	Each service performs a single business function.
+3.	Teams can work independently on different services.
+4.	Services communicate through APIs or lightweight messaging protocols.
+5.	Each service can be deployed without affecting other services.
+6.	Faults in one service usually do not stop the entire application.
+
+Communication Between Microservices
+Microservices communicate using:
+•	REST APIs (HTTP/HTTPS)
+•	Messaging queues (RabbitMQ, Kafka)
+•	gRPC (in some applications)
+In most Spring Boot projects, communication is commonly done using REST APIs.
+Example:
+Frontend
+      ↓
+API Gateway
+      ↓
+-----------------------------
+| User Service              |
+| Product Service           |
+| Order Service             |
+| Payment Service           |
+-----------------------------
+
+Working of Microservices
+1.	A user sends a request from the frontend.
+2.	The request is received by an API Gateway or directly by the required microservice.
+3.	The requested microservice processes the request.
+4.	If additional information is required, it communicates with other microservices using APIs.
+5.	Each microservice accesses its own data or database if needed.
+6.	After processing, the response is sent back to the frontend.
+
+Advantages of Microservices
+•	Easy to develop and maintain
+•	Independent deployment
+•	Better scalability
+•	Faster development by multiple teams
+•	Technology flexibility (different services can use different technologies)
+•	Improved fault isolation
+•	Easier testing and debugging
+
+Real-Life Example
+Consider an E-commerce Application.
+Instead of one large application, it is divided into different microservices:
+•	User Service
+•	Product Service
+•	Cart Service
+•	Order Service
+•	Payment Service
+•	Notification Service
+If the Payment Service needs maintenance, only that service is updated while the rest of the application continues to work normally.
+This makes the application more reliable, scalable, and easier to maintain.
